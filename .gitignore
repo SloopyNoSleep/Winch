@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Local stripped and publicized assemblies
+stripped_dredge_assemblies/

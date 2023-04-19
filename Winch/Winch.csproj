@@ -9,7 +9,7 @@
 	<PropertyGroup>
 		<DebugType>none</DebugType>
 		<OutputPath>./bin</OutputPath>
-		<AssemblyVersion>1.0.*</AssemblyVersion>
+		<AssemblyVersion>0.3.*</AssemblyVersion>
 		<Deterministic>False</Deterministic>
 	</PropertyGroup>
 
@@ -19,14 +19,26 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="Assembly-CSharp.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/Assembly-CSharp.dll" Private="False" />
-		<Reference Include="Assembly-CSharp-firstpass.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/Assembly-CSharp-firstpass.dll" Private="False" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Reference Include="UnityEngine.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/UnityEngine.dll" Private="False" />
-		<Reference Include="UnityEngine.CoreModule.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/UnityEngine.CoreModule.dll" Private="False" />
-		<Reference Include="Unity.ResourceManager.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/Unity.ResourceManager.dll" Private="False" />
+		<Reference Include="Assembly-CSharp">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Assembly-CSharp.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Assembly-CSharp.dll"</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Assembly-CSharp-firstpass.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Assembly-CSharp-firstpass.dll"</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/UnityEngine.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/UnityEngine.dll"</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/UnityEngine.CoreModule.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/UnityEngine.CoreModule.dl"</HintPath>
+		</Reference>
+		<Reference Include="Unity.ResourceManager">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Unity.ResourceManager.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Unity.ResourceManager.dll"</HintPath>
+		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>

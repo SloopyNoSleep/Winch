@@ -21,18 +21,42 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Reference Include="Assembly-CSharp.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/Assembly-CSharp.dll" Private="False" />
-		<Reference Include="Assembly-CSharp-firstpass.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/Assembly-CSharp-firstpass.dll" Private="False" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Reference Include="UnityEngine.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/UnityEngine.dll" Private="False" />
-		<Reference Include="UnityEngine.CoreModule.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/UnityEngine.CoreModule.dll" Private="False" />
-		<Reference Include="UnityEngine.InputLegacyModule.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/UnityEngine.InputLegacyModule.dll" Private="False" />
-		<Reference Include="UnityEngine.LocalizationModule.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/UnityEngine.LocalizationModule.dll" Private="False" />
-		<Reference Include="Unity.ResourceManager.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/Unity.ResourceManager.dll" Private="False" />
-		<Reference Include="Unity.Localization.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/Unity.Localization.dll" Private="False" />
-		<Reference Include="Sirenix.Serialization.dll" HintPath="$(DredgePath)/DREDGE_Data/Managed/Sirenix.Serialization.dll" Private="False" />
+		<Reference Include="Assembly-CSharp">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Assembly-CSharp.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Assembly-CSharp.dll"</HintPath>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Assembly-CSharp-firstpass.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Assembly-CSharp-firstpass.dll"</HintPath>
+		</Reference>
+		<Reference Include="Sirenix.Serialization">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Sirenix.Serialization.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Sirenix.Serialization.dll"</HintPath>
+		</Reference>
+		<Reference Include="Unity.ResourceManager">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Unity.ResourceManager.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Unity.ResourceManager.dll"</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/UnityEngine.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/UnityEngine.dll"</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/UnityEngine.CoreModule.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/UnityEngine.CoreModule.dll"</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/UnityEngine.InputLegacyModule.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/UnityEngine.InputLegacyModule.dll"</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.LocalizationModule">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/UnityEngine.LocalizationModule.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/UnityEngine.LocalizationModule.dll"</HintPath>
+		</Reference>
+		<Reference Include="Unity.Localization">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Unity.Localization.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Unity.Localization.dll"</HintPath>
+		</Reference>
 	</ItemGroup>
 
 	<ItemGroup>
