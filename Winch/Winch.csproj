@@ -9,6 +9,7 @@
 	<PropertyGroup>
 		<DebugType>none</DebugType>
 		<OutputPath>./bin</OutputPath>
+		<AssemblyVersion>1.1.*</AssemblyVersion>
 		<AssemblyVersion>0.3.*</AssemblyVersion>
 		<Deterministic>False</Deterministic>
 	</PropertyGroup>
@@ -38,6 +39,10 @@
 		<Reference Include="Unity.ResourceManager">
 			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Unity.ResourceManager.dll</HintPath>
 			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Unity.ResourceManager.dll"</HintPath>
+		</Reference>
+		<Reference Include="Unity.Localization">
+			<HintPath Condition="Exists('$(SolutionDir)stripped_dredge_assemblies')">$(SolutionDir)stripped_dredge_assemblies/Unity.Localization.dll</HintPath>
+			<HintPath Condition="!Exists('$(SolutionDir)stripped_dredge_assemblies')">"$(DredgePath)/DREDGE_Data/Managed/Unity.Localization.dll"</HintPath>
 		</Reference>
 	</ItemGroup>
 

@@ -12,6 +12,8 @@ namespace Winch.Core
         {
             WinchCore.Log.Debug("Initializer started.");
 
+            AssetLoader.LoadAssets();
+
             InitializeVersionLabel();
 
             if(WinchConfig.GetProperty("EnableDeveloperConsole", false))
@@ -28,7 +30,7 @@ namespace Winch.Core
             GameManager.Instance.BuildInfo.BuildNumber += $"\nWinch {versionString}";
 
             int modsLoaded = ModAssemblyLoader.LoadedMods.Count;
-            string modsLoadedString = $"{modsLoaded} Mod{(modsLoaded > 1 ? "s" : "")} loaded";
+            string modsLoadedString = $"{modsLoaded} Mod{(modsLoaded != 1 ? "s" : "")} loaded";
             GameManager.Instance.BuildInfo.BuildNumber += $"\n{modsLoadedString}";
         }
 
